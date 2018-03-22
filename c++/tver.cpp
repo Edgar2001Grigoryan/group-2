@@ -11,22 +11,22 @@ int main () {
     if (n >= 1 && n <= 9999) {
         switch(n / 1000) {
             case 2 : cout << "erku";
-	        		 break;
-	        	case 3 : cout << "ereq";
-	        		 break;
-	    		case 4 : cout << "chors";
-	             break;
-	    		case 5 : cout << "hing";
-	             break;
-	    		case 6 : cout << "vec";
-	             break;
-	    		case 7 : cout << "yot";
-	             break;
-	    		case 8 : cout << "ut";
-	             break;
-	    		case 9 : cout << "inny";
-	             break;
-	     }
+	        break;
+	    case 3 : cout << "ereq";
+	        break;
+	    case 4 : cout << "chors";
+	        break;
+	    case 5 : cout << "hing";
+	        break;
+	    case 6 : cout << "vec";
+	        break;
+	    case 7 : cout << "yot";
+	        break;
+	    case 8 : cout << "ut";
+	        break;
+	    case 9 : cout << "inny";
+	        break;
+	}
 
         if (n / 1000) {
             cout << " hazar ";
