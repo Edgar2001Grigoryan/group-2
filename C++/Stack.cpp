@@ -13,7 +13,7 @@ class Stack {
             (*this).arr = new int[n];
 	}
         ~Stack(){
-            delete arr;
+            delete [] arr;
         }
  	void push(int k) {
 	    if (top == n) {
