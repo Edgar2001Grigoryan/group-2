@@ -2,7 +2,13 @@
 #include <cmath>
 
 
-class Point {
+class Shape {
+    public:
+        virtual std::string getM() = 0;
+        virtual std::string getN() = 0;
+};
+
+class Point : public Shape {
     protected:
         float x;
         float y;
@@ -35,10 +41,13 @@ class Point {
         long distance(Point b,Point d){
             return sqrt(pow(((double)b.getX()-d.getX()),2)+pow(((double)b.getY()-d.getY()),2));
         }
+	virtual void foo(){std::cout << "Point foo!\n";}
+	void boo(){std::cout << "Point boo!\n";}
+	virtual std::string getM(){return "I am in Point\n";}
+	virtual std::string getN(){return "I am in Point\n";}
 };
 
 class Circle : public Point {
-
     private:
         float r;
     public:
@@ -51,7 +60,11 @@ class Circle : public Point {
         float getL(){
             return 2*M_PI*r;
         }
-        Circle(float r = 0){
+	void setA(Point p){
+	    this->x = p.getX();
+	    this->y = p.getY();
+	}
+        Circle(Point p, float r = 0) :Point(p) {
             this->r = r;
             std::cout << " Circle\n";
         }
@@ -62,11 +75,11 @@ class Circle : public Point {
             std::cout << "I am in copy constructor Circle\n";
             r = c.r;
         }
-        
+	virtual std::string getM(){return "I am in Circle\n";}
+	virtual std::string getN(){return "I am in Circle\n";}     
 };
 
 class Line : public Point {
-    
     private:
         Point a;
     public:   
@@ -74,35 +87,22 @@ class Line : public Point {
             Point b(x,y);
             return distance(b,a);
         }
-        void setAx(Point p){
-            a.setX(p.getX());
+        void setA(Point p){this->a = p;}
+        void setB(Point p){
+	    this->x = p.getX();
+	    this->y = p.getY();
+	}
+        Point getA(){
+            return a;
         }
-        void setX(Point p){
-            this->x = p.getX();
+        Point getB(){
+	    Point b(x,y);
+            return b;
         }
-        void setAy(Point p){
-            a.setY(p.getY());
-        }
-        void setY(Point p){
-            this->y = p.getY();
-        }
-        float getAx(){
-            return a.getX();
-        }
-        float getX(){
-            return x;
-        }
-        float getAy(){
-            return a.getY();
-        }
-        float getY(){
-            return y;
-        } 
-        Line (Point p, Point d) {
+        Line(Point p, Point d) {
             this->x = p.getX();
             this->y = p.getY();
-            setAx(d.getX());
-            setAy(d.getY());
+            this->a = d;
             std::cout << " Line\n";    
         }
         ~Line(){
@@ -114,10 +114,12 @@ class Line : public Point {
         }
         void PrintCoord(Point p, Point d){
             float k = (d.getY()-p.getY())/(d.getX()-p.getX());
+	    float b = p.getY() - k*p.getX();
             for (int i=p.getX()+1; i < d.getX(); i++){
-                std::cout << "(" << i << "," << k*(i-p.getX())+p.getY() << ")\n";
+                std::cout << "(" << i << "," << k*i+b << ")\n";
             }
         }
+
 };
 
 class Rectangle : public Point  {
@@ -127,8 +129,7 @@ class Rectangle : public Point  {
         Rectangle(Point p, Point d){
             this->x = p.getX();
             this->y = p.getY();
-            setCx(d.getX());
-            setCy(d.getY());
+            this->c = d;
             std::cout << " Rectangle\n";
         }
         ~Rectangle(){
@@ -138,36 +139,28 @@ class Rectangle : public Point  {
             c = a.c;
             std::cout << " I am in copy constructor of Rectangle\n";
         } 
-        void setX(Point p){
+        void setA(Point p){
             this->x = p.getX();
+	    this->y = p.getY();
         }
-        void setCx(Point p){
-            c.setX(p.getX());
+        void setB(Point p){
+            this->c = p;
         }
-        void setY(Point p){
-            this->y = p.getY();
+        Point getA(){
+	    Point a(x,y);
+            return a;
         }
-        void setCy(Point p){
-            c.setY(p.getY());
-        }
-        float getX(){
-            return x;
-        }
-        float getCx(){
-            return c.getX();
-        }
-        float getY(){
-            return y;
-        }   
-        float getCy(){
-            return c.getY();
+        Point getB(){
+            return c;
         }
         float getS(){
-            return (getCy()-y)*(getCx()-x);
+            return ((getB()).getY()-y)*((getB()).getX()-x);
         }
         float getL(){
-            return 2*(getCy()-y+getCx()-x);
+            return 2*((getB()).getY()-y+(getB()).getX()-x);
         }
+	virtual void foo(){std::cout << "Rectangle foo!\n";}
+	void boo(){std::cout << "Rectanglee boo!\n";}
 };
 
 class Triangle : public Point {
@@ -177,10 +170,8 @@ class Triangle : public Point {
        Triangle(Point p, Point d, Point m){
             this->x = p.getX();
             this->y = p.getY();
-            setBx(d.getX());
-            setBy(d.getY());
-            setCx(m.getX());
-            setCy(m.getY());
+            this->b = d;
+	    this->c = m;
             std::cout << " Triangle\n";
         }
         ~Triangle(){
@@ -191,52 +182,45 @@ class Triangle : public Point {
             c = a.c;
             std::cout << " I am in copy constructor of Triangle\n";
         }
-        void setX(Point p){
+        void setA(Point p){
             this->x = p.getX();
+	    this->y = p.getY();
         }
-        void setBx(Point p){
-            b.setX(p.getX());
+        void setB(Point p){
+            this->b = p;
         }
-        void setCx(Point p){
-            c.setX(p.getX());
+        void setC(Point p){
+            this->c = p;
         }
-        void setY(Point p){
-            this->y = p.getY();
+        Point getA(){
+	    Point a(x,y);
+            return a;
         }
-        void setBy(Point p){
-            b.setY(p.getY());
+        Point getB(){
+            return b;
         }
-        void setCy(Point p){
-            c.setY(p.getY());
-        }
-        float getX(){
-            return x;
-        }
-        float getBx(){
-            return b.getX();
-        }
-        float getCx(){
-            return c.getX();
-        }
-        float getY(){
-            return y;
-        }
-        float getBy(){
-            return b.getY();
-        }
-        float getCy(){
-            return c.getY();
+        Point getC(){
+            return c;
         }
         float getS(){
-            return 0,5*fabs((x-getCx())*(getBy()-getCy())-(getBx()-getCx())*(y-getCy()));
+            return 0,5*fabs((x-getC().getX())*(getB().getY()-getC().getY())-(getB().getX()-getC().getX())*(y-getC().getY()));
         }
         float getL(){
             Point k(x,y);
             return distance(k,b)+distance(c,b)+distance(k,c);
         }
-
-
+	virtual void foo(){std::cout << "Triangle foo!\n";}
+	void boo(){std::cout << "Triangle boo!\n";}
 };
+
+
+void printS(Shape* obj){
+    std::cout << obj->getM();
+}
+
+void printP(Shape* obj){
+    std::cout << obj->getN();
+}
 
 int main() {
 
@@ -257,7 +241,7 @@ int main() {
     Line l(a,b);
     l.PrintCoord(a,b);
 
-    Circle c;
+    Circle c(m);
     c.setR(10);
     std::cout << "Shrjanagci yerkarutyun:" << c.getL() << "\n";
     std::cout << "Hatvaci yerkarutyun:" << l.getL() << "\n";
@@ -271,7 +255,17 @@ int main() {
     Triangle o = t;
     std::cout << "Yerankyan makeres:" << t.getS() << "\n";
     std::cout << "Yerankyan paragic:" << t.getL() << "\n";
-       
+      
+    Point *p = &r;
+    p->foo(); 
+    p->boo();
+    p = &t;
+    p->foo();
+    p->boo();
+
+    printS(&b);
+    printP(&a);
+    printP(&c);  
 
     return 0;   
 }
