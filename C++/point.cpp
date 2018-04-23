@@ -35,8 +35,8 @@ class Point : public Shape {
         }
         Point(const Point& p){
             std::cout << "I am in copy constructor Point\n";
-            x = p.x;
-            y = p.y;
+            this->x = p.x;
+            this->y = p.y;
         }
         long distance(Point b,Point d){
             return sqrt(pow(((double)b.getX()-d.getX()),2)+pow(((double)b.getY()-d.getY()),2));
@@ -62,9 +62,9 @@ class Circle : public Point {
         }
 	void setA(Point p){
 	    this->x = p.getX();
-	    this->y = p.getY();
+	    this->y = p.getY(); 
 	}
-        Circle(Point p, float r = 0) :Point(p) {
+	Circle(Point p, float r = 0) :Point(p) {
             this->r = r;
             std::cout << " Circle\n";
         }
@@ -112,7 +112,7 @@ class Line : public Point {
             a = l.a;
             std::cout << "I am in copy constructor Line\n";    
         }
-        void PrintCoord(Point p, Point d){
+        void printCoord(Point p, Point d){
             float k = (d.getY()-p.getY())/(d.getX()-p.getX());
 	    float b = p.getY() - k*p.getX();
             for (int i=p.getX()+1; i < d.getX(); i++){
@@ -239,7 +239,7 @@ int main() {
     std::cin >> bY;
     b.setY(bY);
     Line l(a,b);
-    l.PrintCoord(a,b);
+    l.printCoord(a,b);
 
     Circle c(m);
     c.setR(10);
