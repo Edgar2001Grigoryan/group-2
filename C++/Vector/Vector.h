@@ -8,14 +8,15 @@ class Vector{
         unsigned int length;
         int iterator;
         int mSize;
-        const int delta;
+        int delta;
         void enlargeCapacity();
     public:
         Vector(unsigned int size = 10);
         ~Vector();
+	Vector(const Vector& vector);
         int size();
         void push(int n);
-        void pop();
+        int pop();
         bool empty();
         int getFirst();
         int getLast();

@@ -2,16 +2,13 @@
 #include <iostream>
 using namespace std;
 
-Node* SingleLinkedList::findNodeByIndex(int index){
+Node* SingleLinkedList::findNodeByIndex(int index) const {
     if(index >= size){
         return NULL;
     }
     Node* tmp = this->firstNode;
     for(int i=1; i <= index; i++){
         tmp = tmp->next;
-	if(i == index){
-	    return tmp;
-	}
     }
     return tmp;
 }
@@ -20,6 +17,13 @@ Node* SingleLinkedList::findNodeByIndex(int index){
 SingleLinkedList::SingleLinkedList() :size(0)
 {
 
+}
+
+SingleLinkedList::SingleLinkedList(const SingleLinkedList& list)
+{
+    for(int i=0; i < size; i++){
+        insert(list.findNodeByIndex(i)->value,i);
+    }
 }
 
 SingleLinkedList::~SingleLinkedList()
@@ -32,25 +36,33 @@ SingleLinkedList::~SingleLinkedList()
     }
 }
 
-void SingleLinkedList::insert(int value)
+void SingleLinkedList::insert(int value, unsigned int index = 0)
 {
     Node* newNode = new Node;
     newNode->value = value;
-    newNode->next = NULL;
-    if(this->lastNode){
-        this->lastNode->next = newNode; 
+    if(!index){
+	newNode->next = firstNode;
+	this->firstNode = newNode;
+    } else if(index == (size-1)){
+        newNode->next = NULL;
+        if(this->lastNode){
+            this->lastNode->next = newNode; 
+        } else {
+            this->firstNode = newNode;
+        }
+        this->lastNode = newNode;
     } else {
-        this->firstNode = newNode;
+	Node* prev = findNodeByIndex(index-1);
+	newNode->next = findNodeByIndex(index);
+	prev->next = newNode;   
     }
     size++;
-    this->lastNode = newNode;
-   
 }
 
 void SingleLinkedList::remove(unsigned int index)
 {
     if(index >= size){
-       cout << "Error\n";
+       cout << "Error:List is empty(Nothing to remove)!\n";
        return;
     }
     if(!index){

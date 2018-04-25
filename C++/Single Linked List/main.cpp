@@ -7,13 +7,13 @@ int main(){
 
     SingleLinkedList sll;
     cout << sll.length();
-    sll.insert(10);
+    sll.insert(10,0);
     cout << "\n" << sll.length() << "\n";
-    sll.insert(9);
-    sll.insert(2);
+    sll.insert(9,1);
+    sll.insert(2,2);
     cout << sll.find(10);
     for(int i = 0; i < 5;i++){
-        sll.insert(i);
+        sll.insert(i,i+3);
     }
     cout << sll[5];
 

@@ -21,12 +21,20 @@ void Vector::enlargeCapacity()
      mSize+=delta;
 }
 
-Vector::Vector(unsigned int size) :delta(0)
+Vector::Vector(unsigned int size) :delta(10)
 {
     init();
     arr = new int[size];
     iterator = (size-1);
     mSize = size;
+}
+
+Vector::Vector(const Vector& vector) :mSize(vector.mSize)
+{
+    arr = new int[mSize];
+    for (int i = 0; i < mSize; i++) {
+        arr[i] = vector.arr[i];
+    }    
 }
 
 Vector::~Vector()
@@ -48,9 +56,11 @@ void Vector::push(int n)
     length++;
 }
 
-void Vector::pop()
+int Vector::pop()
 {
+    int value = arr[iterator++];
     length--;
+    return value;
 }
 
 bool Vector::empty(){

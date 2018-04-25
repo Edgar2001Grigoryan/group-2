@@ -13,11 +13,12 @@ class SingleLinkedList{
         Node* lastNode;
         Node* firstNode;
         int size;
-        Node* findNodeByIndex(int index);
+        Node* findNodeByIndex(int index) const;
     public:
         SingleLinkedList();
+        SingleLinkedList(const SingleLinkedList& list);
         ~SingleLinkedList();
-        void insert(int value);
+        void insert(int value, unsigned int index);
         void remove(unsigned int index);
         int find(int value);
         int length();
