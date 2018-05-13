@@ -1,0 +1,86 @@
+1.
+sudo fallocate -l 4G /swapfile-1
+sudo chmod 0600 /swapfile-1
+sudo ls -lh /swapfile-1
+sudo mkswap /swapfile-1
+sudo swapon /swapfile-1
+sudo swapon -s
+sudo grep -i swap /proc/meminfo
+sudo swapoff /swapfile-1
+vim /etc/fstab
+վերջում ավելացնում ենք  "/swapfile-1 none swap sw 0 0"
+
+2.
+cd /var/tmp/
+sudo touch test_script.sh
+sudo chmod 777 test_script.sh
+vim test_script.sh {
+   #!/bin/bash
+   echo "This is a sample script to test auto run during boot" > /var/tmp/script.out
+   echo "The time the script run was -->  `date`" >> /var/tmp/script.out
+}
+cd /etc/systemd/system/
+sudo touch sample.service
+sudo chmod 777 sample.service
+vim sample.service {
+   [Unit]
+   Description=Description for sample script goes here
+   After=network.target          [Service]
+   Type=simple
+   ExecStart=/var/tmp/test_script.sh
+   TimeoutStartSec=0      [Install]
+   WantedBy=default.target
+}
+systemctl daemon-reload
+systemctl enable sample.service
+systemctl start sample.service
+systemctl reboot
+
+
+3.
+runlevel (ցույց է տալիս ներկա runlevel-ը)
+
+vim /etc/init/rc-sysinit.conf
+"env DEFAULT_RUNLEVEL=X" to "env DEFAULT_RUNLEVEL=Y" 
+
+init runlevel
+
+4.
+grep -r 'word' | sort > a.txt
+
+5.
+sudo adduser user1
+sudo adduser user2
+sudo adduser user3
+sudo addgroup group1
+sudo addgroup group2
+sudo addgroup group3
+sudo usermod -a -G group1 user1
+sudo usermod -a -G group1 user2
+sudo usermod -a -G group2 user2
+sudo usermod -a -G group2 user3
+sudo usermod -a -G group3 user1
+sudo usermod -a -G group3 user2
+sudo usermod -a -G group3 user3
+mkdir f1
+mkdir f2
+sudo chgrp group1 f1
+sudo chgrp group2 f2
+sudo chown user1 f1
+sudo chown user2 f2
+sudo chmod 774 f1
+sudo chmod 665 f2
+su - user1
+
+6.
+find / -type f -regex ".*\.\(txt\|odt\)"("/" փոխարեն իրանց ընդհանուր դիրեկտորիա)
+
+8.
+cd /bin
+touch a.sh
+
+
+
+
+
+
