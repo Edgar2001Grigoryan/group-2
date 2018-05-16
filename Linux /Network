@@ -1,35 +1,83 @@
-1. Verify whether dhclient is running.
-    ps ax | grep dhclient
-2. Display your current ip address(es).
-    ifconfig
-3. Display the configuration file where this ip address is defined.
-    cat /etc/network/interfaces
-4. Follow the nic configuration in the book to change your ip address from dhcp client to fixed. Keep the same ip address to avoid conflicts!
-    sudo vim /etc/network/interfaces
+2 {
 
-    # interfaces(5) file used by ifup(8) and ifdown(8)
-    auto lo
-    iface lo inet loopback
+	1. Verify whether dhclient is running.
+	    ps ax | grep dhclient
+	2. Display your current ip address(es).
+	    ifconfig
+	3. Display the configuration file where this ip address is defined.
+	    cat /etc/network/interfaces
+	4. Follow the nic configuration in the book to change your ip address from dhcp client to fixed. Keep the same ip address to avoid      	   conflicts!
+	    sudo vim /etc/network/interfaces
 
-    auto  eth0
-    iface eth0 inet static
-    address   172.20.51.62
-    broadcast 172.20.51.255
-    netmask   255.255.255.0
-    gateway   172.20.51.1
-5. Did you also configure the correct gateway in the previous question ? If not, then do this now.
-    gateway 172.20.51.1
-6. Verify that you have a gateway.
-    route
-7. Verify that you can connect to the gateway, that it is alive.
-    ping 172.20.51.1
-8. Change the last two digits of your mac address.
-    sudo ifconfig enp2s0 hw ether d4:3d:7e:b3:47:bb
-9. Which ports are used by http, pop3, ssh, telnet, nntp and ftp ?
-    cat /etc/services | grep ftp
-10. Explain why e-mail and websites are sent over tcp and not udp.
-    tcp֊ն udp֊ից տարբերվում է նրանով, որ tcp֊ն ինֆորմացիայի կորուստ թույլ չի տալիս, իտարբերություն udp֊ի։ Իսկ քանի որ Էլ․ փոստը տվյալների կորուստ չպիտի ունենա, այդ իսկ պատճառով էլ օգտագործում են tcp֊ն։
-11. Display the hostname of your computer.
-    hostname
-12. Which ip-addresses did your computer recently have contact with ?
-    arp -a
+	    # interfaces(5) file used by ifup(8) and ifdown(8)
+	    auto lo
+	    iface lo inet loopback
+
+	    auto  eth0
+	    iface eth0 inet static
+	    address   172.20.51.62
+	    broadcast 172.20.51.255
+	    netmask   255.255.255.0
+	    gateway   172.20.51.1
+	5. Did you also configure the correct gateway in the previous question ? If not, then do this now.
+	    gateway 172.20.51.1
+	6. Verify that you have a gateway.
+	    route
+	7. Verify that you can connect to the gateway, that it is alive.
+	    ping 172.20.51.1
+	8. Change the last two digits of your mac address.
+	    sudo ifconfig enp2s0 hw ether d4:3d:7e:b3:47:bb
+	9. Which ports are used by http, pop3, ssh, telnet, nntp and ftp ?
+	    cat /etc/services | grep ftp
+	10. Explain why e-mail and websites are sent over tcp and not udp.
+	    tcp֊ն udp֊ից տարբերվում է նրանով, որ tcp֊ն ինֆորմացիայի կորուստ թույլ չի տալիս, իտարբերություն udp֊ի։ Իսկ քանի որ Էլ․   		       փոստը տվյալների կորուստ չպիտի ունենա, այդ իսկ պատճառով էլ օգտագործում են tcp֊ն։
+	11. Display the hostname of your computer.
+	    hostname
+	12. Which ip-addresses did your computer recently have contact with ?
+	    arp -a
+}
+
+
+5 {
+
+	1. Install sshd on the server.
+	    sudo apt install ssh
+	2. Verify in the ssh configuration files that only protocol version 2 is allowed.
+	    grep Protocol /etc/ssh/ssh_config
+	3. Use ssh to log on to the server, show your current directory and then exit the server.
+	    ssh student@<ip>
+	    pwd
+	    exit
+	4. Use scp to copy a file from your computer to the server.
+	    scp <file> student@<ip>:<directory>
+	5. Use scp to copy a file from the server to your computer.
+	    scp student@<ip>:<file> <directory>
+	6. (optional, only works when you have a graphical install of Linux) Install the xeyes package
+	   on the server and use ssh to run xeyes on the server, but display it on your client.
+
+	7. (optional, same as previous) Create a bookmark in firefox, then quit firefox on client and
+	   server. Use ssh -X to run firefox on your display, but on your neighbour's computer. Do you
+	   see your neighbour's bookmark ?
+
+	8. Use ssh-keygen to create a key pair without passphrase. Setup passwordless ssh between
+	   you and your neighbour. (or between your client and your server)
+
+	9. Verify that the permissions on the server key files are correct; world readable for the public
+	   keys and only root access for the private keys.
+	    ls -l /etc/ssh/
+	10. Verify that the ssh-agent is running.
+	    ps -ef | grep ssh-agent
+	11. (optional) Protect your keypair with a passphrase, then add this key to the ssh-agent
+	    and test your passwordless ssh to the server.
+}
+
+
+6 {
+
+1. Create two directories with some files. Use nfs to share one of them as read only, the other
+must be writable. Have your neighbour connect to them to test.
+
+2. Investigate the user owner of the files created by your neighbour.
+
+3. Protect a share by ip-address or hostname, so only your neighbour can connect.
+}
