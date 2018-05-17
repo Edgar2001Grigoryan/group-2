@@ -74,10 +74,29 @@
 
 6 {
 
-1. Create two directories with some files. Use nfs to share one of them as read only, the other
-must be writable. Have your neighbour connect to them to test.
+	1. Create two directories with some files. Use nfs to share one of them as read only, the other
+	   must be writable. Have your neighbour connect to them to test.
+	    cd ~/Desktop
+	    mkdir a,b
+	    cd a
+	    touch a.txt
+	    cd ../b
+	    touch b.txt
+	    sudo vim /etc/exports
+	    ~/Desktop/a/a.txt (ro)
+	    ~/Desktop/b/b.txt (rw)
+	    for test -> mount -t nfs <ip>:~/Desktop/a ~/Desktop/b /mnt
+	2. Investigate the user owner of the files created by your neighbour.
 
-2. Investigate the user owner of the files created by your neighbour.
+	3. Protect a share by ip-address or hostname, so only your neighbour can connect.
+	    ~/Desktop/a/a.txt student(rw)
+}
 
-3. Protect a share by ip-address or hostname, so only your neighbour can connect.
+
+10 {
+
+	1. Install bind9 and verify with a sniffer how it works.
+	    sudo apt-get install bind9 bind9utils bind9-doc
+	4. Use dig and nslookup to verify your NS and A records.
+	    dig
 }
