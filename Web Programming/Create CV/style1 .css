@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#imgBack {
+    width: 100vw;
+}
+
+#divBack {
+    position: absolute;
+}
+
+#middle {
+    height: 150px;
+    background: lightgray;
+}
+
+#footer {
+    height: 250px;
+    background: #adadad;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    background: limegreen;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    position: absolute;
+    margin-top: 80vh;
+    margin-left: 70vw;
+}
+
+button:focus {
+    outline: 1px solid black;
+}
+
+#middleDiv {
+    width: 100vw;
+    height: 100vh;
+    background: blue;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    border: none;
+    position: absolute;
+    margin-top: 0vh;
+    display: block;
+    opacity: 0.1;
+}
+
+#middleDiv1 {
+    width: 55%;
+    height: 400px;
+    display: block;
+    margin-top: 10vh;
+    float: left;
+    
+}
+
+#middleDiv2 {
+    width: 40%;
+    height: 400px;
+    display: block;
+    margin-top: 35vh;
+    float: left;
+}
+
+span {
+    width: 550px;
+    height: 100px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    position: absolute;
+    margin-top: 40vh;
+    margin-left: 55vw;
+}
+
+#middle div:not(#CircleDiv2) {
+    float: left;
+    width: 45.2vw;;
+}
+
+.Circle {
+    width: 107.5px;
+    height: 107.5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+    color: #82a1da;
+}
+
+h2 {
+    float: left;
+    text-align: center;
+    font-size: 25px;
+    color: #82a1da;
+    border: none;
+    position: absolute;
+    margin-top: 39px;
+    margin-left: 21.1vw;
+    
+}
+
+#Circle2 {
+    float: left;
+}
+
+#h1-2 {
+    width: 107.5px;
+    height: 107.5px;
+    margin-top: 121px;
+}
+
+#CircleDiv2 {
+    float: left;
+    width: 107.5px;
+    height: 150px;
+}
+
+#h2-2 {
+    text-align: center;
+    margin-left: 48vw;
+}
