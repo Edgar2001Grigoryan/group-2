@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    overflow-x: hidden;
+    overflow: scroll;
     background: #adadad;
 }
 
@@ -14,10 +14,12 @@ body {
 }
 
 #middle {
-    height: 24vh;
+    height: 35vh;
+    width: 100vw;
     background: lightgray;
     text-align: center;
     z-index: 0;
+    float: left;
 }
 
 #footer {
@@ -86,47 +88,37 @@ span {
     margin-left: 45vw;
 }
 
-#middle div:not(#CircleDiv2) {
+#middle div {
+    width: 75%;
+    height: 100%;
+    margin: auto;
+}
+
+#middle div div {
     float: left;
-    width: 45.2vw;
-    height: 150px;
-    
-}
-
-.Circle {
-    width: 107.5px;
-    height: 107.5px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h1 {
-    font-size: 20px;
+    width: calc(100%/3);
     text-align: center;
-    color: #82a1da;
+    padding-top: 3vh;
 }
 
-h2 {
-    float: left;
-    text-align: center;
-    font-size: 50px;
-    color: #82a1da;
-    border: none;
-    position: absolute;
-    margin-top: 24.75px;
-    margin-left: 19.72vw;
+#middle h2 {
+    height: 18vh;
+    width: 18vh;
+    border: 2px solid blue;
+    border-radius: 1000px;
+    margin: auto;
+    background: white;
+    font-size: 8vh;
+    color: blue;
+    display: inline-block;
+    align-items: center;
+
+
 }
 
-#CircleDiv2 {
-    float: left;
-    width: 8.26vw;
-    height: 150px;
-}
-
-#h2-2 {
-    text-align: center;
-    margin-left: 46.44vw;
+#middle h1 {
+    color: blue;
+    font-size: 5vh;
 }
 
 .CV {
