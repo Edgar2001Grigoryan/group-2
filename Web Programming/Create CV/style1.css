@@ -1,18 +1,96 @@
 body {
     margin: 0;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     background: #adadad;
 }
 
+#mainDiv {
+    width: 100vw;
+    height: 100vh;
+    background: url('images/steve.jpg');
+    background-size: 100vw 100vh;
+}
 #imgBack {
     width: 100vw;
     z-index: -2;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 #divBack {
     position: absolute;
+    height: 100vh;
 }
 
+#cv img {
+    width: 150px;
+    height: 200px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 100;
+}
+#cvArea {
+    width: 35vw;
+    height: 80vh;
+    float: left;
+}
+#cv {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    margin-left: 10%;
+    margin-top: 30%;
+}
+#cv1 {
+    margin-left: 15%;  
+}
+#cv2 {
+    margin-top: 15%;
+}
+#cv3 {
+    margin-left: 53%;
+    margin-top: 20%;
+}
+#cv4 {
+    margin-left: 20%;
+    margin-top: 40%;
+}
+#textArea {
+    display: inline-block;
+    width: 50vw;
+    height: 80vh;
+}
+#text {
+    position: relative;
+    width: 100%;
+    margin-top: 30%;
+    margin-left: 10%;
+    color: white;
+}
+button {
+    position: absolute;
+    background: green;
+    width: 250px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    border: none;
+    z-index: 1;
+    color: white;
+    outline: none;
+}
+button:hover {
+    border: 2px solid blue;
+}
+#divButton {
+    margin: 0 auto;
+    width: 250px;
+    height: 50px;
+}
 #middle {
     height: 35vh;
     width: 100vw;
@@ -28,25 +106,8 @@ body {
     z-index: 0;
 }
 
-button {
-    width: 200px;
-    height: 50px;
-    background: limegreen;
-    font-size: 20px;
-    border-radius: 10px;
-    color: white;
-    border: none;
-    position: absolute;
-    margin-top: 40vh;
-    margin-left: 55vw;
-}
-
-button:focus {
-    outline: 1px solid black;
-}
-
 #opacityDiv {
-    width: 100vw;
+    /*width: 100vw;
     height: 100vh;
     background: blue;
     font-size: 20px;
@@ -55,8 +116,8 @@ button:focus {
     position: absolute;
     margin-top: 0vh;
     display: block;
-    opacity: 0.1;
-    z-index: -1;
+    opacity: 1;
+    z-index: -1;*/
 }
 
 #middleDiv1 {
@@ -112,7 +173,7 @@ span {
     color: blue;
     display: inline-block;
     align-items: center;
-
+    line-height: 18vh;
 
 }
 
@@ -121,68 +182,112 @@ span {
     font-size: 5vh;
 }
 
-.CV {
-    height: 210px;
-    width: 153px;
-    position: absolute;
-    z-index: 1;
-    box-shadow: 3px 3px 3px #1f1919;
-}
-
-#CV1 {
-    top: 15vh;
-    left: 8vw;
-}
-
-#CV2 {
-    top: 15vh;
-    left: 24vw;
-    z-index: 4;
-    box-shadow: 0px 0px 0px;
-}
-
-#CV3 {
-    top: 19.5vh;
-    left: 17.6vw;
-    z-index: 2;
-}
-
-#CV4 {
-    top: 10.5vh;
-    left: 13.6vw;
-    z-index: 3;
+#topDiv div{
+    width: calc(100%/4);
+    float: left;
+    text-align: center;
+    margin-top: 5vh;
 }
 
 #footer img {
-    width: 143.11px;
-    height: 143.11px;
-    display: block;
-    border: 20px orange;
-    border-radius: 50%;
+    width: 50%;
+    border-radius: 1000px;
+    border: 2px solid orange;
 }
 
-#footer div {
+#bottomDiv {
+    text-align: center;
+}
+
+#bottomDiv div{
+    width: 75%;
+    height: 100%;
+    margin: auto;
+}
+
+#bottomDiv div div {
+    width: calc(100%/3);
     float: left;
-    height: 31.8vh;
-    width: 11vw;
+    text-align: center;
+    margin-top: 5vh;
 }
 
-#footer div:not(.bottomDivs) {
-    margin-top: 3vh;
-}
 
-#footer div:not(#firstDiv) {
-    margin-left: 1.75vw;
-}
+@media screen and (max-width: 1200px) {
 
-#firstDiv {
-    margin-left: 5.65vw;
-}
+    #cvArea img{
+        display: none;
+    }
 
-#lastDiv {
-    margin-right: 5.65vw;
-}
+    #CircleDiv3 h2 {
+        display: none;
+    }
 
-.bottomDivs {
-    margin-top: 23vh;
+    #CircleDiv3 h1 {
+        display: none;
+    }
+
+    #middle div div {
+        width: 50%;
+    }
+
+    #middle div {
+        width: 90%;
+    }
+
+    #middle h1 {
+        font-size: 100%;
+    }
+
+    #CircleDiv3 {
+        display: none;
+    }
+
+    #text {
+        margin-top: 10%;
+        margin-left: 20%;
+    }
+
+    #topHiddenImg {
+        display: none;
+    }
+
+    #topDiv div{
+        width: calc(100%/3);
+    }
+
+    #bottomDiv div div {
+        width: calc(100%/2);
+    }
+
+    #bottomDiv div{
+        width: 66.67%;
+    }
+
+    #bottomHiddenImg {
+        display: none;
+    }
+
+    button {
+        width: 125px;
+        height: 25px;
+        border-radius: 7.5px;
+        font-size: 15px;
+    }
+
+    #divButton {
+        width: 125px;
+        height: 25px;
+    }
+    
+    #cvArea {
+        display: none;
+    }
+
+    @media screen and (max-height: 500px) {
+        p {
+            font-size: 14px;
+        }
+    } 
+    
 }

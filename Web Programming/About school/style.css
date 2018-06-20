@@ -1,0 +1,242 @@
+body {
+    margin: 0;
+   
+    overflow-x: hidden;
+}
+
+header {
+    height: 7vh;
+    background: rgb(36, 36, 36);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#mainDiv {
+    background: url("images/oxford.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#leftDiv, #rightDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#leftDiv {
+    width: 45%;
+    margin-left: 2%;
+}
+
+#rightDiv {
+    width: 13%;
+    margin-right: 2%;
+}
+
+#leftDiv p {
+    color: white;
+    font-size: 12px;
+}
+
+#leftDiv img {
+    width: 5%;
+    height: 60%;
+}
+
+#rightDiv a {
+    width: 50%;
+    height: 100%;
+}
+
+#rightDiv a  img {
+    width: 80%;
+    height: 80%;
+    margin: 10% 0;
+}
+
+#mainDiv {
+    width: 100vw;
+    height: 100vh;
+}
+
+#opacityDiv {
+    width: inherit;
+    height: inherit;
+    background-color: red;
+    opacity: 0.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#centerTextDiv {
+    position: absolute;
+    top: 7vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#firstP {
+    color: white;
+    font-size: 4vw;
+}
+
+#lastP {
+    color: white;
+    font-size: 2vw;
+}
+
+#blueImagesDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    top: calc(100vh + 100px);
+}
+
+#blueImagesDiv img {
+    width: 200px;
+    height: 200px;
+    background: blue;
+    border: 3px solid blue;
+    border-radius: 2000px;
+}
+
+#secondDiv {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#secondDiv div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#secondDiv h1 {
+    font-size: 20px;
+}
+
+#secondDiv p {
+    color: #34909c;
+}
+
+#textPicturesContainer {
+    height: 100vh;
+    background: hsl(184, 67%, 90%);
+    min-height: 530px;
+}
+
+#text {
+    width: 35%;
+    height: inherit;
+    float: left;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+#text p {
+    font-size: 100%;
+}
+
+#picturesDiv {
+    width: 50%;
+    height: inherit;
+    float: left;
+    margin: 10% 5% 0 5%;
+}
+
+#picturesDiv img {
+    width: 30%;
+    height: 45%;
+    position: absolute;
+}
+
+#firstPicture {
+    z-index: 1;
+}
+
+#lastPicture {
+    z-index: 2;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+#middleDiv {
+    width: 100vw;
+    height: 200vh;
+    text-align: center;
+}
+
+#middleDiv h1 {
+    font-size: 4vw;
+}
+
+#middleDiv>p {
+    margin: 0 15%;
+    font-size: 100%;
+}
+
+#div1 {
+    height: 200px;
+    width: calc(100%/2);
+    display: flex;
+    flex-direction: row;
+    border: 3px solid orange;
+}
+
+#div1-1 {
+    float: left;
+    width: 35%;
+
+    margin-top: 3%;
+    margin-bottom: 16.9%;
+    margin-left: 1%;
+    margin-right: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid orange;
+    border-radius: 2000px;
+}
+
+#div1-1 img {
+    width: 50px;
+    height: 50px;
+    background: orange;
+    border-radius: 2000px;
+}
+
+#div1-2 {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 5%;
+}
+
+#div1-2 p {
+    font-size: 120%;
+}
+
+@media screen and (max-height: 850px) and (max-width: 1000px) {
+
+    #blueImagesDiv img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #text p {
+        font-size: 55%;
+    }
+}
