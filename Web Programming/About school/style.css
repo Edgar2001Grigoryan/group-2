@@ -129,7 +129,7 @@ header {
     top: calc(100vh + 100px);
 }
 
-#blueImagesDiv i {
+#secondDiv i {
     width: 20vh;
     height: 20vh;
     background: rgb(91, 91, 253);
@@ -145,17 +145,13 @@ header {
     align-items: center;
 }
 
-#secondDiv {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 #secondDiv div {
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    width: calc(100%/3);
+    min-width: 320px;
 }
 
 #secondDiv h1 {
@@ -169,7 +165,10 @@ header {
 #textPicturesContainer {
     height: 100vh;
     background: hsl(184, 67%, 90%);
-    min-height: 530px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
 }
 
 #text {
@@ -181,14 +180,17 @@ header {
 }
 
 #text p {
-    font-size: 1.3vw;;
+    font-size: 1.3vw;
+    min-width: 300px;
 }
 
 #picturesDiv {
     width: 50%;
     height: 85%;
-    float: left;
-    margin: 10% 5% 0 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #picturesDiv img {
@@ -275,7 +277,7 @@ header {
 }
 
 .div1-2 p {
-    font-size: 100%;
+    font-size: 80%;
     font-weight: 700;
     color: rgb(169, 240, 216);
 }
@@ -309,8 +311,8 @@ header {
     flex-direction: column;
     border: 1px solid rgb(221, 215, 215);
     width: 30%;
-    height: 400px;
     margin: 2.5% 0;
+    min-width: 320px;
 }
 
 .div2 i {
@@ -409,6 +411,10 @@ header {
 #secondDiv {
     height: 65%;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 label {
@@ -483,13 +489,16 @@ label {
 
 @media screen and (max-height: 850px) and (max-width: 1000px) {
 
-    #blueImagesDiv img {
-        width: 100px;
-        height: 100px;
-    }
-
     #text p {
         font-size: 55%;
+    }
+
+    #rightDiv {
+        width: 20%;
+    }
+
+    #textPicturesContainer {
+        flex-direction: column;
     }
 
     .imageDiv img {
@@ -497,10 +506,10 @@ label {
         height: 60px;
     }
 
-    #blueImagesDiv i {
+    #secondDiv i {
         width: 10vh;
         height: 10vh;
-        margin-top: -5vh;
+        margin-top: 0;
     }
 
     #rightDiv {
@@ -527,6 +536,10 @@ label {
         height: auto;
     }
 
+    #text {
+        width: 100%;
+    }
+
 }
 
 @media screen and (max-width:500px) {
@@ -534,8 +547,38 @@ label {
         width: 90%;
     }
 
-    #middleDiv {
-        height: 120vh;
-    }
+    #secondDiv i {
+        width: 10vh;
+        height: 10vh;
+        margin-top: 0;
+    }   
     
+    #text {
+        width: 95%;
+    }
+
+    #rightDiv {
+        width: 20%;
+    }
+
+}
+
+@media screen and (max-width: 1025px) {
+    #secondDiv i {
+        width: 10vh;
+        height: 10vh;
+        margin-top: 0;
+    }
+
+    #rightDiv {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1025px) {
+    #secondDiv i {
+        width: 10vh;
+        height: 10vh;
+        margin-top: -5vh;
+    }
 }

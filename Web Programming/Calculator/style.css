@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+#header {
+    width: 500px;
+    height: 50px;
+    border: 2px solid gray;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#middle {
+    width: 500px;
+    height: 50px;
+    border: 2px solid gray;
+    margin: 10px auto;
+    border-radius: 10px;
+    background: blue;
+}
+#footer {
+    width: 500px;
+    height: 50px;
+    border: 2px solid gray;
+    margin: 10px auto;
+    border-radius: 10px;
+    background: orange;
+}
+#footer button {
+    width: 96px;
+    height: 46px;
+    border-radius: 15px;
+    background: yellow;
+}
+#header>h1 {
+    float: right;
+}

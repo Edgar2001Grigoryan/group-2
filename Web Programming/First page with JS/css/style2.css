@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: rgb(255, 213, 124);
+}
+
+#mainDiv {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: inherit;
+    height: 10vh;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+}
+
+#toph1 {
+    color: white;
+    margin: 0 5vw;
+    font-size: 4vh;
+}
+
+#firstDiv {
+    height: 29vh;
+    margin: 2vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#div1 {
+    width: 100%;
+    height: calc(100%/3);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#div1 input {
+    width: calc(100%/4);
+    height: 50%;
+    background: black;
+    color: white;
+    text-align: center;
+    outline: none;
+    border-radius: 5px;
+    border: 3px solid rgb(83, 255, 83);
+    margin-bottom: 2vh;
+}
+
+::placeholder {
+    color: white;
+}
+
+#div2 {
+    width: 100%;
+}
+
+#add {
+    width: 15vw;
+    height: 5vh;
+    margin-left: 81vw;
+    background: black;
+    outline: none;
+    border: 3px solid rgb(83, 255, 83);
+    border-radius: 5px;
+    color: white;
+}
+
+#secondDiv {
+    height: 45vh;
+    margin: 5vh 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#secondDiv div {
+    height: 100%;
+    width: calc(100%/4);
+    background: black;
+    border: 3px solid rgb(83, 255, 83);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 11vh;
+}
+
+#footer {
+    width: inherit;
+    height: 10vh;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0; 
+}
+
+#footerText {
+    color: white;
+    font-size: 5vh;
+}
+
+h2 {
+    color: white;
+    margin: 1vh;
+}
+
+@media screen and (max-width: 1025px) {
+    h2 {
+        font-size: 80%;
+    }
+}
