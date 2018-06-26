@@ -43,7 +43,7 @@ function init() {
             window.sessionStorage.setItem("address" + String(count), document.getElementById('address').value);
         }
         var node = document.createElement("h2");
-        if (window.sessionStorage.getItem("address" + String(countn))) {
+        if (x == 10) {
             var textnode = document.createTextNode("Address: " + window.sessionStorage.getItem("address" + String(countn)));
         } else {
             var textnode = document.createTextNode("Address: " + document.getElementById('address').value);
@@ -55,7 +55,7 @@ function init() {
             window.sessionStorage.setItem("city" + String(count), document.getElementById('city').value);
         }
         var node = document.createElement("h2");
-        if (window.sessionStorage.getItem("city" + String(countn))) {
+        if (x == 10) {
             var textnode = document.createTextNode("City: " + window.sessionStorage.getItem("city" + String(countn)));
         } else {
             var textnode = document.createTextNode("City: " + document.getElementById('city').value);
@@ -67,7 +67,7 @@ function init() {
             window.sessionStorage.setItem("country" + String(count), document.getElementById('country').value);
         }
         var node = document.createElement("h2");
-        if (window.sessionStorage.getItem("country" + String(countn))) {
+        if (x == 10) {
             var textnode = document.createTextNode("Country: " + window.sessionStorage.getItem("country" + String(countn)));
         } else {
             var textnode = document.createTextNode("Country: " + document.getElementById('country').value);
@@ -79,7 +79,7 @@ function init() {
             window.sessionStorage.setItem("phone" + String(count), document.getElementById('phone').value);
         }
         var node = document.createElement("h2");
-        if (window.sessionStorage.getItem("phone" + String(countn))) {
+        if (x == 10) {
             var textnode = document.createTextNode("Phone: " + window.sessionStorage.getItem("phone" + String(countn)));
         } else {
             var textnode = document.createTextNode("Phone: " + document.getElementById('phone').value);
@@ -91,7 +91,7 @@ function init() {
             window.sessionStorage.setItem("name" + String(count), document.getElementById('name').value);
         }
         var node = document.createElement("h2");
-        if (window.sessionStorage.getItem("name" + String(countn))) {
+        if (x == 10) {
             var textnode = document.createTextNode("Name: " + window.sessionStorage.getItem("name" + String(countn)));
         } else {
             var textnode = document.createTextNode("Name: " + document.getElementById('name').value);
@@ -102,7 +102,7 @@ function init() {
             window.sessionStorage.setItem("surname" + String(count), document.getElementById('surname').value);
         }
         var node = document.createElement("h2");
-        if (window.sessionStorage.getItem("surname" + String(countn))) {
+        if (x == 10) {
             var textnode = document.createTextNode("Surname: " + window.sessionStorage.getItem("surname" + String(countn)));
         } else {
             var textnode = document.createTextNode("Surname: " + document.getElementById('surname').value);

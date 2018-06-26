@@ -163,20 +163,20 @@ header {
 }
 
 #textPicturesContainer {
-    height: 100vh;
     background: hsl(184, 67%, 90%);
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
-
 }
 
 #text {
-    width: 35%;
-    height: 95%;
-    float: left;
-    margin-left: 5%;
-    margin-top: 5%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 #text p {
@@ -186,16 +186,14 @@ header {
 
 #picturesDiv {
     width: 50%;
-    height: 85%;
+    height: 90vh;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
 #picturesDiv img {
-    width: 30%;
-    height: 45%;
     position: absolute;
 }
 
@@ -479,10 +477,14 @@ label {
     border: none;
 }
 
-#footer {
-    height: 5vh;
+.footer {
+    height: 15vh;
     display: flex;
-    
+    background: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: gray;
 }
 
 
@@ -561,6 +563,10 @@ label {
         width: 20%;
     }
 
+    #picturesDiv {
+        height: 60vh;
+    }
+
 }
 
 @media screen and (max-width: 1025px) {
@@ -580,5 +586,18 @@ label {
         width: 10vh;
         height: 10vh;
         margin-top: -5vh;
+    }
+
+}
+
+@media screen and (min-width:560px) and (max-width:850px) {
+    #picturesDiv {
+        height: 110vh;
+    }
+}
+
+@media screen and (min-height:1000px){
+    #picturesDiv {
+        height: 40vh;
     }
 }

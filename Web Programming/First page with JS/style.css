@@ -1,7 +1,7 @@
 body {
     margin: 0;
     overflow-x: hidden;
-    background: rgb(255, 213, 124);
+    background: url(image.jpg);    
 }
 
 #mainDiv {
@@ -21,7 +21,7 @@ header {
 }
 
 #toph1 {
-    color: white;
+    color: rgb(83, 255, 83);
     margin: 0 5vw;
     font-size: 4vh;
 }
@@ -53,7 +53,7 @@ header {
     color: white;
     text-align: center;
     outline: none;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 3px solid rgb(83, 255, 83);
     margin-bottom: 2vh;
 }
@@ -69,11 +69,12 @@ header {
 #add {
     width: 15vw;
     height: 5vh;
+    min-height: 50%;
     margin-left: 81vw;
     background: black;
     outline: none;
     border: 3px solid rgb(83, 255, 83);
-    border-radius: 5px;
+    border-radius: 10px;
     color: rgb(83, 255, 83);
 }
 
@@ -97,6 +98,7 @@ header {
     justify-content: space-around;
     align-items: center;
     margin-bottom: 11vh;
+    border-radius: 10px;
 }
 
 #footer {
@@ -112,18 +114,23 @@ header {
 }
 
 #footerText {
-    color: white;
+    color: rgb(83, 255, 83);
     font-size: 5vh;
 }
 
 h2 {
-    color: white;
+    color: rgb(83, 255, 83);
     margin: 1vh;
 }
 
 @media screen and (max-width: 1025px) {
     h2 {
         font-size: 80%;
+    }
+
+    #add {
+        height: 6vh;
+        margin-top: 4vh;
     }
 }
 
@@ -183,7 +190,7 @@ h2 {
 }
 
 h3 {
-    color: white;
+    color: rgb(83, 255, 83);
     margin: 0 4%;
     flex-direction: row;
     display: flex;
