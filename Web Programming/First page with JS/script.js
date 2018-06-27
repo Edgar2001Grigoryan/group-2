@@ -37,8 +37,6 @@ function init() {
     }
 
     function addContent(x) {
-
-
         if (x != 10) {
             window.sessionStorage.setItem("address" + String(count), document.getElementById('address').value);
         }
@@ -50,6 +48,7 @@ function init() {
         }
         node.appendChild(textnode);
         document.getElementById(String(count)).appendChild(node);
+
 
         if (x != 10) {
             window.sessionStorage.setItem("city" + String(count), document.getElementById('city').value);
@@ -63,6 +62,7 @@ function init() {
         node.appendChild(textnode);
         document.getElementById(String(count)).appendChild(node);
 
+
         if (x != 10) {
             window.sessionStorage.setItem("country" + String(count), document.getElementById('country').value);
         }
@@ -74,6 +74,7 @@ function init() {
         }
         node.appendChild(textnode);
         document.getElementById(String(count)).appendChild(node);
+
 
         if (x != 10) {
             window.sessionStorage.setItem("phone" + String(count), document.getElementById('phone').value);
@@ -87,6 +88,7 @@ function init() {
         node.appendChild(textnode);
         document.getElementById(String(count)).appendChild(node);
 
+
         if (x != 10) {
             window.sessionStorage.setItem("name" + String(count), document.getElementById('name').value);
         }
@@ -98,6 +100,7 @@ function init() {
         }        node.appendChild(textnode);
         document.getElementById(String(count)).appendChild(node);
 
+        
         if (x != 10) {
             window.sessionStorage.setItem("surname" + String(count), document.getElementById('surname').value);
         }
