@@ -1,0 +1,121 @@
+#mainDiv {
+    background-image: url(images/layer-19.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#opacityDiv1 {
+    background-color: rgb(0, 0, 0, 0.6);
+}
+
+#p1 {
+    color: white; 
+    font-size: 5vmax;
+    margin: 20vh 20vw 10vh 20vw;
+    text-align: center;
+    font-weight: 600;
+}
+
+#downArrowDiv {
+    border: 1px solid white; 
+    border-radius: 150px; 
+    margin-bottom: 5vh;
+}
+
+#downArrow {
+    font-size: 30px;
+    color: white;
+}
+
+#howWork ul {
+    list-style-type: none; 
+    padding-left: 25px; 
+    list-style-type: decimal;
+}
+
+#howWork li {
+    font-size: 1.15vw;
+    margin: 2vh 0;
+    color: rgb(97, 97, 97)
+}
+
+#howWork h1 {
+    margin: 5vh 0 0 1.5vw;
+}
+
+#divsCont {
+    margin: 10vh 0;
+}
+
+#div1, #div2, #div3 {
+    background-color: white;
+    max-width: 323px;
+    border: 1px solid rgb(151, 151, 151);
+    margin-bottom: 5vh;
+}
+
+#whyChoose {
+    background-image: url(images/layer-23.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#opacityDiv2 {
+    width: 100%;
+    background-color: rgb(0, 0, 0,0.8);
+}
+
+#chooseText h1 {
+    margin-top: 10vh;
+    margin-bottom: 0;
+    margin-left: 7vw;
+}
+
+#whyChoose span {
+    margin-left: 7vw;
+}
+
+#text {
+    margin: 5vh 30vw 5vh 0;
+    color: rgb(160, 160, 160);
+}
+
+#whyChoose ul {
+    margin: 2vh 0 10vh 7vw;
+    color: rgb(160, 160, 160);
+}
+
+#coaches h1 {
+    margin: 10vh 0;
+}
+
+#coaches img {
+    margin-bottom: 5vh;
+}
+
+#lastDiv {
+    margin-bottom: 15vh;
+}
+
+#peopleSay {
+    background-image: url(images/fitness.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#opacityDiv3 {
+    background: rgb(20, 150, 210, 0.8);
+}
+
+#whatSay {
+    padding-top: 20vh;
+    margin-bottom: 10vh;
+}
+
+#div4, #div5 {
+    margin-bottom: 25vh;
+}
+
+#div4 div, #div5 div {
+    margin-left: 4vw;
+}

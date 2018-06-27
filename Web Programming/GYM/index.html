@@ -6,17 +6,16 @@
         <link rel="stylesheet" href="fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.css">
         <link rel="stylesheet" href="bootstrap-4.1.1-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="style.css">
-
         <title>Document</title>
     </head>
     <body>
-        <div style="background-image: url(images/layer-19.png); background-repeat: no-repeat; background-size: cover">
-            <div style="background-color: rgb(0, 0, 0, 0.6)">
+        <div id="mainDiv">
+            <div id="opacityDiv1">
                 <div class="container-fluid">
                     <div class="row">
-                        <nav class="navbar navbar-brand col mx-5">
+                        <nav class="navbar col mx-5">
                             <div>
-                                <p class="text-warning h1">Train<span class="h1" style="color: white">Me</span></p>
+                                <p class="text-warning h1">Train<span class="h1 text-white">Me</span></p>
                             </div>
                             <div>
                                 <button class="btn">Login</button>
@@ -25,14 +24,124 @@
                         </nav>
                     </div>
                     <div class="justify-content-center align-items-center row">
-                        <p style="color: white; font-size: 5vmax; margin: 10vh 20vw; text-align: center; font-weight: 600">LOREM <span class="text-warning">IPSUM DOLOR</span> SIT AMET</p>
+                        <p id="p1">LOREM <span class="text-warning">IPSUM DOLOR</span> SIT AMET</p>
                     </div>
                     <div class="row justify-content-center align-items-center h2">
-                        <p style="color: white">How it works for you</p>
+                        <h4 class="text-white">How it works for you</h4>
                     </div>
                     <div class=" row justify-content-center align-items-center">
-                        <div class="pb-2 pt-2 pl-4 pr-4" style="border: 1px solid white; border-radius: 150px; margin: 5vh 0">
-                            <i class="fas fa-arrow-down" style="font-size: 30px; color: white"></i>
+                        <div class="pb-2 pt-2 pl-4 pr-4" id="downArrowDiv">
+                            <i class="fas fa-arrow-down" id="downArrow"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="howWork">
+            <h1 class="text-info">HOW IT WORKS FOR YOU</h1>
+            <div class="row justify-content-around" id="divsCont">
+                <div id="div1">
+                    <img src="images/layer-21.png">
+                    <ul>
+                        <li>Build a personal profile</li>
+                        <li>Increase value in your service</li>
+                        <li>Build a schedule that is convenient to you</li>
+                        <li>Access to additional revenue at your fingertips</li>
+                    </ul>
+                </div>
+                <div id="div2">
+                    <img src="images/layer-20.png">
+                    <ul>
+                        <li>Build a personal profile</li>
+                        <li>Increase value in your service</li>
+                        <li>Decrease the time management spends looking for quality instructors</li>
+                        <li>Access to top rated instructors in your area</li>
+                    </ul>
+                </div>
+                <div id="div3">
+                    <img src="images/layer-22.png">
+                    <ul>
+                        <li>Search your database for the top rated instructors, classes and clubs in your area</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid p-0" id="whyChoose">
+            <div id="opacityDiv2">
+                <div class="container">
+                    <div class="row" id="chooseText">
+                        <h1 class="text-warning">WHY CHOOSE US</h1>
+                    </div>
+                    <div class="row">
+                        <span class="text-warning">Cras diam maurius, pretium trincidunt mattis at</span>
+                    </div>
+                    <div class="row">
+                        <span id="text">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+                            natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque 
+                            eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+                            pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                            In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                            Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+                            Cras dapibus. Vivamus elementum semper nisi.
+                        </span>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetuer</li>
+                            <li>Nullam dictum felis eu pede mollis pretium</li>
+                            <li>Etiam ultricies nisi vel augue.Curabitur</li>
+                            <li>Aenean leo ligula, porttitor eu, consequat</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="coaches">
+            <h1 class="text-info">OUR COACHES</h1>
+            <div class="row justify-content-around" id="firstDiv">
+                <img src="images/layer-9.png">
+                <img src="images/layer-24.png">
+                <img src="images/layer-25.png">
+                <img src="images/layer-5.png">
+            </div>
+            <div class="row justify-content-around" id="lastDiv">
+                <img src="images/layer-25.png">
+                <img src="images/layer-4.png">
+                <img src="images/layer-3.png">
+                <img src="images/layer-6.png">
+            </div>
+        </div>
+        <div class="container-fluid p-0" id="peopleSay">
+            <div id="opacityDiv3">
+                <div class="container">
+                    <div id="whatSay">
+                        <h1 class="text-white">WHAT PEOPLE SAY?</h1>
+                    </div>
+                    <div class="row">
+                        <div class="media col-6" id="div4">
+                            <img src="images/layer-11.png">
+                            <div class="media-body">
+                                <h4 class="text-white">Deloris Ermintrude</h4>
+                                <p class="text-white"> Nulla consequat massa quis enim. Donec
+                                    pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                                    Nullam dictum felis eu pede mollis pretium.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media col-6" id="div5">
+                            <img src="images/layer-12.png">
+                            <div class="media-body">
+                                <h4 class="text-white">Deloris Ermintrude</h4>
+                                <p class="text-white"> Nulla consequat massa quis enim. Donec
+                                    pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                                    Nullam dictum felis eu pede mollis pretium.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
