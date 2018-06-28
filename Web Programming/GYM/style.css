@@ -119,3 +119,27 @@
 #div4 div, #div5 div {
     margin-left: 4vw;
 }
+
+#pictures h1 {
+    margin: 10vh 0;
+}
+
+#pictures img {
+    max-width: 100%;
+    margin-bottom: 4vh;
+}
+
+#infoDiv {
+    background-color: rgb(66, 66, 66);
+}
+
+#div6, #div7, #div8 {
+    border-bottom: 5px solid green;
+    background-color: rgb(50, 50, 50);
+}
+
+
+#x {
+    border: 3px solid gray;
+    border-radius: 100%;
+}
