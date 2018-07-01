@@ -134,12 +134,39 @@
 }
 
 #div6, #div7, #div8 {
-    border-bottom: 5px solid green;
+    border-bottom: 5px solid orange;
     background-color: rgb(50, 50, 50);
 }
 
+#div7 {
+    border-bottom-color: blue;
+}
 
-#x {
+#div8 {
+    border-bottom-color: green;
+}
+
+.circles {
+    height: 115px;
+    width: 115px;
     border: 3px solid gray;
     border-radius: 100%;
+}
+
+#footer {
+    background-color: rgb(50, 50, 50); 
+}
+
+#text1 {
+    margin: 0 15vw;
+}
+
+#lineDiv {
+    border: 1px solid gray;
+    width: 15vw;
+}
+
+#navigation {
+    width: 100%;
+    margin: 0 20vw;
 }
